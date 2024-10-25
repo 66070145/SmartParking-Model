@@ -75,6 +75,8 @@ void setup()
   Serial.begin(9600);
 
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+
+  Blynk.virtualWrite(V2, park_limit);
   pinMode(ledPin, OUTPUT);          // ตั้งค่าพิน LED เป็น OUTPUT
   gate_in.attach(10);
   gate_out.attach(11);
