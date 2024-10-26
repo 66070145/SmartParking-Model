@@ -1,8 +1,8 @@
+
 #define BLYNK_PRINT Serial
 #define BLYNK_TEMPLATE_ID "TMPL6QRjPH69I"
 #define BLYNK_TEMPLATE_NAME "smartparking"
 #define BLYNK_AUTH_TOKEN    "po6V3XG9qb7bnsUw9g21VbVpY7JBvgYo"
-
 
 #include <SPI.h>
 #include <WiFiS3.h>
@@ -43,7 +43,6 @@ void setup()
 {
 
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
-
   Blynk.virtualWrite(V2, park_limit);
   pinMode(ledPin, OUTPUT);
   gate_in.attach(10);
@@ -62,29 +61,28 @@ void setup()
 void loop()
 {
   Blynk.run();
-    Blynk.virtualWrite(V0, park_counter);
+  Blynk.virtualWrite(V0, park_counter);
+    if (!digitalRead(in_sensor) && (park_counter > 0)) {
+      gate_in.write(90);
+      delay(100);
+      park_counter -= 1;
+      displayDigit(park_counter);
+      Blynk.virtualWrite(V0, park_counter);
+      delay(2000);
+      gate_in.write(0);
+      delay(100);
+  }
 
-      if (!digitalRead(in_sensor) && (park_counter > 0)) {
-        gate_in.write(90);
-        delay(100);
-        park_counter -= 1;
-        displayDigit(park_counter);
-        Blynk.virtualWrite(V0, park_counter);
-        delay(2000);
-        gate_in.write(0);
-        delay(100);
-    }
-
-    if (!digitalRead(out_sensor) && (park_counter < park_limit)) {
-        gate_out.write(90);
-        delay(1000);
-        park_counter += 1;
-        displayDigit(park_counter);
-        Blynk.virtualWrite(V0, park_counter);
-        delay(2000);
-        gate_out.write(0);
-        delay(100);
-    }
+  if (!digitalRead(out_sensor) && (park_counter < park_limit)) {
+      gate_out.write(90);
+      delay(1000);
+      park_counter += 1;
+      displayDigit(park_counter);
+      Blynk.virtualWrite(V0, park_counter);
+      delay(2000);
+      gate_out.write(0);
+      delay(100);
+  }
 
 }
 
