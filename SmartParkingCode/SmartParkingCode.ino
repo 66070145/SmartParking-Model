@@ -9,8 +9,8 @@
 #include <BlynkSimpleWifi.h>
 #include <Servo.h>
 
-char ssid[] = "NT wifi 4106-2.4G";
-char pass[] = "0957959968";
+char ssid[] = "your_wifi"; //ชื่อWiFiที่ต้องการเชื่อม
+char pass[] = "password"; //รหัสWiFi
 
 int num_array[10][7] = {  
                           { 1,1,1,1,1,1,0 },    // 0
@@ -31,17 +31,16 @@ const int segment_d = 5;
 const int segment_e = 6;
 const int segment_f = 7;
 const int segment_g = 8;
-Servo gate_in;
-Servo gate_out;
-const int in_sensor = 12;
-const int out_sensor = 13;
+Servo gate_in; //ที่กั้นทางเข้า
+Servo gate_out; //ที่กั้นทางออก
+const int in_sensor = 12; //เซ็นเซอร์ทางเข้า
+const int out_sensor = 13; //เซ็นเซอร์ทางออก
 const int ledPin = 1;
-int park_counter = 3;
-int park_limit = 3;
+int park_counter = 3; //จำนวนที่จอดรถที่ว่าง
+int park_limit = 3; //จำนวนที่จอดรถทั้งหมด
 
 void setup()
 {
-
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
   Blynk.virtualWrite(V2, park_limit);
   pinMode(ledPin, OUTPUT);
@@ -61,8 +60,9 @@ void setup()
 void loop()
 {
   Blynk.run();
-  Blynk.virtualWrite(V0, park_counter);
-    if (!digitalRead(in_sensor) && (park_counter > 0)) {
+  Blynk.virtualWrite(V0, park_counter); //ส่งค่าที่จอดรถที่ว่างไปยังBlynk
+    if (!digitalRead(in_sensor) && (park_counter > 0)) //เมื่อเซ็นเซอร์ทางเข้ารับค่าว่ามีรถและยังมีที่ว่าง ทางเข้าจะเปิด
+    {
       gate_in.write(90);
       delay(100);
       park_counter -= 1;
@@ -71,9 +71,10 @@ void loop()
       delay(2000);
       gate_in.write(0);
       delay(100);
-  }
+    }
 
-  if (!digitalRead(out_sensor) && (park_counter < park_limit)) {
+  if (!digitalRead(out_sensor) && (park_counter < park_limit)) //เมื่อเซ็นเซอร์ทางออกรับค่าว่ามีรถ ทางออกจะเปิด
+  {
       gate_out.write(90);
       delay(1000);
       park_counter += 1;
@@ -89,7 +90,7 @@ void loop()
 BLYNK_WRITE(V1) {
     int ledState = param.asInt();
     digitalWrite(ledPin, ledState);
-}
+} //ควบคุมการเปิด-ปิดไฟผ่านBlynk
 
 BLYNK_WRITE(V2) {
     int new_park_limit = param.asInt();
@@ -106,7 +107,7 @@ BLYNK_WRITE(V2) {
 
   park_limit = new_park_limit;
   Blynk.virtualWrite(V0, park_counter);
-}
+} //เพิ่ม-ลดจำนวนที่จอดรถทั้งหมดผ่านBlynk
 
 void displayDigit(int digit) {
   digitalWrite(segment_a, num_array[digit][0]);
@@ -116,5 +117,5 @@ void displayDigit(int digit) {
   digitalWrite(segment_e, num_array[digit][4]);
   digitalWrite(segment_f, num_array[digit][5]);
   digitalWrite(segment_g, num_array[digit][6]);
-}
+} //ควบคุมการแสดงผลของ 7 segment display
 
