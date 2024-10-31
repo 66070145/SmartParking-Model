@@ -23,4 +23,4 @@ https://66070149.github.io/smartparkingweb/index.html
 | 66070134 | นายพิชัยศิลป์ รติภโรทัยกุล | ต่อวงจร, video | <img src="pic/66070134.jpg" width="200"> |
 
 ## Poster
-< src="Poster/Poster.png" width="1000">
+< src="pic/Poster.png" width="1000">
