@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-a11y-dark.min.css" integrity="sha512-bd1K4DEquIavX49RSZHIE0Ye6RFOVlGLhtGow9KDbLYqOd/ufhshkP0GoJoVR1jqj7FmOffvVIKuq1tcXlN9ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    
+
+   
+</head>
+<body>
+    <div class="fixed-top">
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container">
+                <span class="navbar-brand">SmartParking-Model</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="banner">
+        <div class="container text-center">
+            <h1 class="fw-bold">SmartParking-Model</h1>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h2>บทคัดย่อ</h2>
+        <p>โครงการนี้เป็นการบูรณาการการใช้งาน Microcontroller ในรายวิชา Physical Computing โดยมีวัตถุประสงค์เพื่อพัฒนาระบบ Smart Parking แบบจำลองที่มีประสิทธิภาพในการจัดการและควบคุมลานจอดรถ ระบบประกอบด้วยเซ็นเซอร์ที่ตรวจจับวัตถุทั้งทางเข้าและทางออก โดยเมื่อรถมาถึงทางเข้า ประตูจะเปิดและจำนวนที่จอดรถว่างที่แสดงบนจอ 7-segment จะลดลง เช่นเดียวกัน เมื่อรถเคลื่อนมาถึงทางออก ประตูจะเปิดและจำนวนที่จอดรถว่างจะเพิ่มขึ้น ระบบยังใช้แอปพลิเคชัน Blynk IoT บนโทรศัพท์มือถือสำหรับแสดงจำนวนที่จอดรถว่างที่มีอยู่ในขณะนั้น ปรับจำนวนที่จอดรถทั้งหมด และควบคุมการเปิด-ปิดไฟลานจอดรถ เพื่อให้ผู้ใช้สามารถทราบสถานะที่จอดรถได้อย่างสะดวก ช่วยให้การจัดการลานจอดรถมีประสิทธิภาพมากยิ่งขึ้น</p>
+        <br>
+        <h2>อุปกรณ์</h2>
+        <div class="row">
+            <div class="col">
+                <img src="photo/arduino.jpg" alt="Arduino UNO R4 WiFi" class="custom-image">
+                <p>Arduino UNO R4 WiFi</p>
+            </div>
+            <div class="col">
+                <img src="photo/servo.jpg" alt="servo" class="custom-image">
+                <p>Servo 180 องศา</p>
+            </div>
+            <div class="col">
+                <img src="photo/ir.jpg" alt="irsensor" class="custom-image">
+                <p>IR Infrared Sensor</p>
+            </div>
+            <div class="col">
+                <img src="photo/yellow.jpg" alt="LED" class="custom-image">
+                <p>LED</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="photo/breadboard.jpg" alt="breadboard" class="custom-image">
+                <p>Breadboard</p>
+            </div>
+            <div class="col">
+                <img src="photo/sevensegment.jpg" alt="7 Segment Display" class="custom-image">
+                <p>7 Segment Display</p>
+            </div>
+            <div class="col">
+                <img src="photo/jumper.jpg" alt="Jumper" class="custom-image">
+                <p>Jumper Wires</p>
+            </div>
+            <div class="col">
+                <img src="photo/330resistor.jpg" alt="resister" class="custom-image">
+                <p>330 Ohm Resister</p>
+            </div>
+        </div>
+        <br>
+        <h2>วงจร</h2>
+        <div class="center-container">
+            <img src="photo/circuit.png" alt="circuit" class="bigpic">
+        </div>
+        <br>
+        <h2>Model</h2>
+        <div class="center-container">
+            <div class="row">
+                <div class="col">
+                    <img src="photo/model1.jpg" alt="model1" class="midpic">
+                </div>
+                <div class="col">
+                    <img src="photo/model2.jpg" alt="model2" class="midpic">
+                </div>
+                <div class="col">
+                    <img src="photo/model3.jpg" alt="model3" class="midpic">
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2>Library</h2>
+        <p>- SPI.h</p>
+        <p>- WiFiS3.h</p>
+        <p>- BlynkSimpleWifi.h</p>
+        <p>- Servo.h</p>
+        <br>
+        <h2>Code</h2>
+        <a href="https://github.com/66070145/SmartParking-Model" target="_blank" class="custom-button">Go to Github</a>
+        <br>
+        <br>
+        <div class="code-container">
+            <pre><code class="language-cpp">
+            #define BLYNK_PRINT Serial
+            #define BLYNK_TEMPLATE_ID "xxxxxxxxx" //Template ID
+            #define BLYNK_TEMPLATE_NAME "smartparking" //ชื่อ Template
+            #define BLYNK_AUTH_TOKEN    "xxxxxxxxxxxxxxxxx" //TOKEN
+    
+            #include &lt;SPI.h&gt;
+            #include &lt;WiFiS3.h&gt;
+            #include &lt;BlynkSimpleWifi.h&gt;
+            #include &lt;Servo.h&gt;
+    
+            
+            char ssid[] = "your_wifi"; //ชื่อWiFiที่ต้องการเชื่อม
+            char pass[] = "password"; //รหัสWiFi
+
+            int num_array[10][7] = {  
+                                    { 1,1,1,1,1,1,0 },    // 0
+                                    { 0,1,1,0,0,0,0 },    // 1
+                                    { 1,1,0,1,1,0,1 },    // 2
+                                    { 1,1,1,1,0,0,1 },    // 3
+                                    { 0,1,1,0,0,1,1 },    // 4
+                                    { 1,0,1,1,0,1,1 },    // 5
+                                    { 1,0,1,1,1,1,1 },    // 6
+                                    { 1,1,1,0,0,0,0 },    // 7
+                                    { 1,1,1,1,1,1,1 },    // 8
+                                    { 1,1,1,0,0,1,1 }};   // 9
+
+            const int segment_a = 2; 
+            const int segment_b = 3; 
+            const int segment_c = 4;
+            const int segment_d = 5;
+            const int segment_e = 6;
+            const int segment_f = 7;
+            const int segment_g = 8;
+            Servo gate_in; //ที่กั้นทางเข้า
+            Servo gate_out; //ที่กั้นทางออก
+            const int in_sensor = 12; //เซ็นเซอร์ทางเข้า
+            const int out_sensor = 13; //เซ็นเซอร์ทางออก
+            const int ledPin = 1;
+            int park_counter = 3; //จำนวนที่จอดรถที่ว่าง
+            int park_limit = 3; //จำนวนที่จอดรถทั้งหมด
+
+            void setup()
+            {
+            Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+            Blynk.virtualWrite(V2, park_limit);
+            pinMode(ledPin, OUTPUT);
+            gate_in.attach(10);
+            gate_out.attach(11);
+            pinMode(in_sensor, INPUT);
+            pinMode(out_sensor, INPUT);
+            pinMode(segment_a, OUTPUT);   
+            pinMode(segment_b, OUTPUT);   
+            pinMode(segment_c, OUTPUT);   
+            pinMode(segment_d, OUTPUT);   
+            pinMode(segment_e, OUTPUT);   
+            pinMode(segment_f, OUTPUT);   
+            pinMode(segment_g, OUTPUT);
+            }
+
+            void loop()
+            {
+            Blynk.run();
+            Blynk.virtualWrite(V0, park_counter); //ส่งค่าที่จอดรถที่ว่างไปยังBlynk
+                if (!digitalRead(in_sensor) && (park_counter > 0)) //เมื่อเซ็นเซอร์ทางเข้ารับค่าว่ามีรถและยังมีที่ว่าง ทางเข้าจะเปิด
+                {
+                gate_in.write(90);
+                delay(100);
+                park_counter -= 1;
+                displayDigit(park_counter);
+                Blynk.virtualWrite(V0, park_counter);
+                delay(2000);
+                gate_in.write(0);
+                delay(100);
+                }
+
+            if (!digitalRead(out_sensor) && (park_counter &lt; park_limit)) //เมื่อเซ็นเซอร์ทางออกรับค่าว่ามีรถ ทางออกจะเปิด
+            {
+                gate_out.write(90);
+                delay(1000);
+                park_counter += 1;
+                displayDigit(park_counter);
+                Blynk.virtualWrite(V0, park_counter);
+                delay(2000);
+                gate_out.write(0);
+                delay(100);
+            }
+
+            }
+
+            BLYNK_WRITE(V1) {
+                int ledState = param.asInt();
+                digitalWrite(ledPin, ledState);
+            } //ควบคุมการเปิด-ปิดไฟผ่านBlynk
+
+            BLYNK_WRITE(V2) {
+                int new_park_limit = param.asInt();
+
+            if (new_park_limit > park_limit) {
+                park_counter += (new_park_limit - park_limit);
+                displayDigit(park_counter);
+            } else if (new_park_limit &lt; park_limit) {
+                if (park_counter > new_park_limit) {
+                park_counter =  max(0, park_counter - (park_limit - new_park_limit));
+                displayDigit(park_counter);
+                }
+            }
+
+            park_limit = new_park_limit;
+            Blynk.virtualWrite(V0, park_counter);
+            } //เพิ่ม-ลดจำนวนที่จอดรถทั้งหมดผ่านBlynk
+
+            void displayDigit(int digit) {
+            digitalWrite(segment_a, num_array[digit][0]);
+            digitalWrite(segment_b, num_array[digit][1]);
+            digitalWrite(segment_c, num_array[digit][2]);
+            digitalWrite(segment_d, num_array[digit][3]);
+            digitalWrite(segment_e, num_array[digit][4]);
+            digitalWrite(segment_f, num_array[digit][5]);
+            digitalWrite(segment_g, num_array[digit][6]);
+            } //ควบคุมการแสดงผลของ 7 segment display
+
+            </code></pre>
+        </div>
+        <br>
+        <br>
+        <h2>Video</h2>
+        <div class="responsive-iframe-container">
+            <iframe src="https://www.youtube.com/embed/Rb4mVsnm5Cg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>

@@ -1,0 +1,401 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    padding-bottom: 50px;
+    font-family: 'Kanit', sans-serif;
+    background-color: #2d2d2d  !important;
+    justify-content: center;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 90px;
+    color: #00ca9e;
+    font-family: 'Kanit', sans-serif;
+}
+
+h2 {
+    font-size: 30px;
+    color: #00ca9e;
+    font-family: 'Kanit', sans-serif;
+}
+
+h6{
+    font-family: 'Kanit', sans-serif;
+    color: #fff !important;
+    font-size: 16px !important;
+}
+
+p {
+    font-size: 20px;
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+#parking-status {
+    height: 100px;
+    width: 250px;
+    line-height: 0.05;
+    flex-direction: column;
+    display: flex;
+    border: 1px solid white;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#controls {
+    flex-direction: column;
+    display: flex;
+    height: 220px;
+    width: 270px;
+    border: 1px solid white;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#toggle-button {
+
+    font-size: 16px;
+    height: 80px;
+    width: 80px;
+    color: #fff;
+    background-color: #717171;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-content: center;
+}
+
+#toggle-button.on {
+    background-color: #00ca9e; 
+}
+
+#toggle-button.on:hover {
+    background-color: #00a782;
+}
+
+#toggle-button.off {
+    background-color: #f44336;
+}
+
+#toggle-button.off:hover {
+    background-color: #b42e24;
+}
+
+/* สถานะการแสดงผล */
+#parking-status p, #controls p {
+    font-size: 1.2em;
+    color: #ffffff;
+   
+}
+
+.slider-container {
+    flex-direction: column;
+    display: flex;
+    height: 90px;
+    width: 250px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    border: 1px solid white;
+    text-align: left;
+    color: #fff;
+    justify-content: center;
+    line-height: 2;
+    font-family:  'Kanit', sans-serif;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #717171;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #00ca9e;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #00ca9e;
+    cursor: pointer;
+}
+
+#tool-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 20px;
+}
+
+#tool-container > div {
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+#left-tool-container {
+    align-content: center;
+    
+}
+
+.nav {
+    height: 50px;
+    width: 100%; 
+    background-color: #1a1a1a;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.navbar-brand {
+    font-family: 'Kanit', sans-serif;
+    color: white !important;
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.nav-pills {
+    border-radius: 0;
+    padding-left: 10px;
+    display: flex;
+    margin-left: 20px;
+}
+
+.nav-pills .nav-link {
+    height: 50px;
+    border-radius: 0;
+    background-color: #00ca9e;
+    color: white;
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    
+}
+
+
+.nav-pills .nav-link:hover {
+    border-radius: 0;
+    background-color: #00a782;
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #1a1a1a;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #00ca9e;
+}
+
+.nav-link.active {
+    color: #00ca9e !important;
+}
+
+.dropdown-item.active {
+    color: #00ca9e ;
+}
+
+.navbar-toggler {
+    background-color: #ffffff;
+}
+
+.custom-navbar {
+    background-color: #252525;
+    color: white;
+}
+
+.custom-navbar .navbar-brand, 
+.custom-navbar .nav-link {
+    color: white;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #00a782;
+}
+
+
+.banner {
+    position: relative;
+    background-image: url('photo/parking.jpg');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+}
+
+.banner h1, .banner p {
+    position: relative;
+    z-index: 2;
+}
+
+.fw-bold{
+    font-size: 50px;
+}
+
+.custom-image {
+    width: 120px;
+    height: 90px;
+    border-radius: 8%;
+
+}
+
+.bigpic{
+    width: 400px;
+    height: auto;
+    border-radius: 8%;
+
+}
+
+.midpic{
+    width: 160px;
+    height: auto;
+    border-radius: 8%;
+}
+
+.profilepic{
+    width: 220px;
+    height: 250px;
+    border-radius: 8%;
+}
+
+@media (min-width: 800px) {
+    .custom-image {
+        width: 220px;
+        height: 180px
+    }
+
+    .bigpic {
+        width: 750px;
+        height: auto;
+    }
+
+    .midpic {
+        width: 320px;
+        height: auto;
+    }
+
+}
+
+.center-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-button{
+    width: 350px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00ca9e;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-family: 'Kanit', sans-serif;
+}
+
+.custom-button:hover{
+    background-color: #00a782;
+    color: white;
+}
+
+.member-tag{
+    width: 280px;
+    height: 400px;
+    background-color: #1a1a1a;
+    border: #fff solid 1px;
+    border-radius: 8%;
+    text-align: center;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.code-container {
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #1a1a1a;
+}
+
+.fixed-top {
+    background-color: #1a1a1a;
+}
+
+.responsive-iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
