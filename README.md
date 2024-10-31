@@ -21,3 +21,6 @@ https://66070149.github.io/smartparkingweb/index.html
 | 66070140 | นางสาวภคนันท์ ศรีจันทร์บาล | ต่อวงจร | <img src="pic/66070140.jpg" width="200"> |
 | 66070149 | นางสาวภัทรลภา เลื่อมประภัศร์ | coding | <img src="pic/66070149.jpg" width="200"> |
 | 66070134 | นายพิชัยศิลป์ รติภโรทัยกุล | ต่อวงจร, video | <img src="pic/66070134.jpg" width="200"> |
+
+## Poster
+< src="Poster/Poster.png" width="1000">
